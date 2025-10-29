@@ -105,9 +105,26 @@ The generated CSV includes the following columns:
 - **Status**: Always "Draft"
 - **Labels**: Comma-separated list of tags
 
+### Reformatted CSV Output
+
+The application also generates a `reformatted.csv` file with a simplified format optimized for certain import tools:
+
+- **Priority**: Test case priority (High/Medium/Low)
+- **Name**: Full test case name (Feature + Scenario)
+- **Description**: Empty by design (can be filled manually)
+- **Steps**: Each step on a separate row with empty priority, name, description, and expected result
+- **Expected Result**: Empty for step rows (last column)
+
+This format spreads each test case across multiple rows, with one row for the header and subsequent rows for each step, making it easier to review and edit in spreadsheet applications before import.
+
 ## Example Output
 
-From the included `example.feature`, the application generates test cases for:
+From the included `example.feature`, the application generates two CSV files:
+
+1. **example.csv** - Standard Zephyr format with all data in columns
+2. **reformatted.csv** - Multi-row format with steps on separate lines
+
+Both files contain test cases for:
 - Successful login with valid credentials
 - Failed login with invalid password
 - Login with empty credentials
