@@ -1,0 +1,38 @@
+"Name","Description","Steps","Expected Result","Priority","Status","Labels"
+"User Login - Successful login with valid credentials","","1. Given the user is on the login page
+2. When the user enters username ""testuser@example.com""
+3. And the user enters password ""SecurePass123""
+4. And the user clicks the login button
+5. Then the user should be redirected to the dashboard
+6. And the user should see a welcome message","5. the user should be redirected to the dashboard","High","Draft","critical, smoke"
+"User Login - Failed login with invalid password","","1. Given the user is on the login page
+2. When the user enters username ""testuser@example.com""
+3. And the user enters password ""WrongPassword""
+4. And the user clicks the login button
+5. Then the user should see an error message ""Invalid credentials""
+6. And the user should remain on the login page","5. the user should see an error message ""Invalid credentials""","High","Draft","high"
+"User Login - Login with empty credentials","","1. Given the user is on the login page
+2. When the user clicks the login button
+3. Then the user should see validation errors
+   Username is required
+Password is required","3. the user should see validation errors
+   Username is required
+Password is required","Medium","Draft","medium"
+"User Login - Login with different user roles (<username>=admin@example.com, <password>=AdminPass1, <dashboard_type>=admin, <role>=Admin)","","1. Given the user is on the login page
+2. When the user enters username ""admin@example.com""
+3. And the user enters password ""AdminPass1""
+4. And the user clicks the login button
+5. Then the user should be redirected to the ""admin"" dashboard
+6. And the user role should be ""Admin""","5. the user should be redirected to the ""admin"" dashboard","Medium","Draft",""
+"User Login - Login with different user roles (<username>=user@example.com, <password>=UserPass1, <dashboard_type>=user, <role>=User)","","1. Given the user is on the login page
+2. When the user enters username ""user@example.com""
+3. And the user enters password ""UserPass1""
+4. And the user clicks the login button
+5. Then the user should be redirected to the ""user"" dashboard
+6. And the user role should be ""User""","5. the user should be redirected to the ""user"" dashboard","Medium","Draft",""
+"User Login - Login with different user roles (<username>=guest@example.com, <password>=GuestPass1, <dashboard_type>=guest, <role>=Guest)","","1. Given the user is on the login page
+2. When the user enters username ""guest@example.com""
+3. And the user enters password ""GuestPass1""
+4. And the user clicks the login button
+5. Then the user should be redirected to the ""guest"" dashboard
+6. And the user role should be ""Guest""","5. the user should be redirected to the ""guest"" dashboard","Medium","Draft",""
